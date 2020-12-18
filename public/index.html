@@ -11,7 +11,7 @@
     <div class="hero">
         <div class="hero__container">
             <header class="hero__header">
-                <h1 class="hero__header__title">TheCARGOS</h1>
+                <h1 class="hero__header__title">@TheCARGOS</h1>
                 <nav>
                     <ul class="hero__header__nav">
                         <li class="hero__header__nav__li">Languages</li>
@@ -25,6 +25,7 @@
             </header>
     
             <div class="hero__body">
+                <h1 class="hero__body__title">Carlos Loayza</h1>
                 <h1 class="hero__body__title">Jr. Frontend Developer</h1>
                 <p class="hero__body__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil accusamus sed, commodi repellat est veniam, laudantium fuga repudiandae voluptatem asperiores numquam ipsa quod odio.</p>
                 
@@ -73,12 +74,12 @@
         </div>
     </section>
     <svg class="wave-1hkxOo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none"><path class="wavePath-haxJK1" d="M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z" fill="var(--off-white)"></path></svg>
-    <section style="background: var(--off-white)">
+    <section style="background: var(--off-white); margin-top: -10px;">
         <div class="container">
             <div class="row row--reverse">
                 <div class="row-item row-item--text">
-                    <h2 class="row__title">Experiences I got</h2>
-                    <p class="row__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat velit labore magnam sit distinctio?</p>
+                    <h2 class="row__title">Projects & Challenges</h2>
+                    <p class="row__text">2019 was the year I started coding for others, one year later I feel comfortable making design into code.</p>
                     <a class="hero__body__buttons__btn hero__body__buttons__btn--dark" href="#!">Review Projects</a>
                 </div>
                 <img class="row-item" src="https://discord.com/assets/98c9edf635a98377ec579aaa19ed47be.svg" alt="">
@@ -88,11 +89,27 @@
     </section>
     <section>
         <div class="container">
-            <div class="row">
-                <img class="row-item" src="https://discord.com/assets/9184fcadc2e3c84650dd4b075850d3d6.svg" alt="">
-                <div class="row-item row-item--text">
-                    <h2 class="row__title">Challenges I've been solving so far...</h2>
-                    <p class="row__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat velit labore magnam sit distinctio?</p>
+            <div class="column">
+                <h2 class="row__title">Contact me</h2>
+                <p class="row__text">Feel free to contact me any time, I will be happy to meet you.</p>
+            
+                <div class="form-container">
+                    <form class="form" action="/contact" method="POST">
+                        <fieldset class="fieldset">
+                            <label class="form__label" for="name">FULLNAME</label>
+                            <input class="form__input" type="text" id="name" placeholder="ex: John Doe">
+                        </fieldset>
+                        <fieldset class="fieldset">
+                            <label class="form__label" for="name">SUBJECT</label>
+                            <input class="form__input" type="text" id="subject" placeholder="ex: Remote Frontend Job">
+                        </fieldset>
+                        <fieldset class="fieldset">
+                            <label class="form__label" for="name">MESSAGE</label>
+                            <input class="form__input" type="text" id="content" placeholder="ex: whatever you wan to tell me...">
+                        </fieldset>
+                        <button class="hero__body__buttons__btn hero__body__buttons__btn--dark" type="submit">Send</button>
+                    </form>
+                    <img class="form-container__img" src="https://discord.com/assets/351330f6409e8046b0c996093e3e827b.svg" alt="">
                 </div>
             </div>
         </div>
@@ -113,16 +130,5 @@
             bottom: "-100%",
             delay: 1
         }, "-=2")
-
-    console.log(timeline)
-    // gsap.from(".hero", {
-    //     height: 0
-    // })
-    // gsap.from(".hero__body__title", {
-    //     opacity: 0,
-    //     duration: 1,
-    //     ease: "elastic"
-    // })
-
 </script>
 </html>

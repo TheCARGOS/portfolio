@@ -282,7 +282,8 @@ img.row-item {
     margin-top: 24px;
     font-size: 20px;
     line-height: 32px;
-    color: var(--greyple)
+    color: black;
+    font-weight: lighter;
 }
 
 .skills {
@@ -298,3 +299,71 @@ img.row-item {
     width: 40px;
     margin-right: 20px;
 }
+
+.column {
+    padding: 150px 0;
+}
+
+.form-container {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 50% 1fr;
+}
+
+.form {
+    padding-right: 5%;
+}
+
+.form-container__img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.form__label {
+    font-size: 12px;
+    line-height: 2;
+}
+
+.form__input {
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    line-height: 2;
+    padding-left: 10px;
+    color: rgba(0, 0, 0, .8);
+}
+
+.form button {
+    width: 100%;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+
+/* <h2 class="row__title">Contact me</h2>
+<p class="row__text">Feel free to contact me any time, I will be happy to meet you.</p>
+<form ass="form" action="/contact" method="POST">
+    <h3 class="form__title">Contact me</h3>
+    <span class="form__text">Feel free to send me a message</span>
+    <fieldset class="fieldset">
+        <label class="form__label" for="name">FULLNAME</label>
+        <input class="form__input" type="text" id="name" placeholder="ex: John Doe">
+    </fieldset>
+    <fieldset class="fieldset">
+        <label class="form__label" for="name">SUBJECT</label>
+        <input class="form__input" type="text" id="subject" placeholder="ex: Remote Frontend Job">
+    </fieldset>
+    <fieldset class="fieldset">
+        <label class="form__label" for="name">DESCRIPTION</label>
+        <input class="form__input" type="text" id="content" placeholder="ex: whatever you wan to tell me...">
+    </fieldset>
+    <button class="form__button" type="submit">Send</button>
+</form> */
