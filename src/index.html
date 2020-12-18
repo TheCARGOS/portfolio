@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARLOS' PORTFOLIO</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero__container">
+            <header class="hero__header">
+                <h1 class="hero__header__title">TheCARGOS</h1>
+                <nav>
+                    <ul class="hero__header__nav">
+                        <li class="hero__header__nav__li">Skills</li>
+                        <li class="hero__header__nav__li">Experience</li>
+                        <li class="hero__header__nav__li">Challenges</li>
+                        <li class="hero__header__nav__li">Feedback</li>
+                        <li class="hero__header__nav__li">Contact</li>
+                    </ul>
+                </nav>
+                <a class="hero__header__btn-lang" href="#!">Login</a>
+            </header>
+    
+            <div class="hero__body">
+                <h1 class="hero__body__title">Jr. Frontend Developer</h1>
+                <p class="hero__body__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil accusamus sed, commodi repellat est veniam, laudantium fuga repudiandae voluptatem asperiores numquam ipsa quod odio.</p>
+                
+                <div class="hero__body__buttons">
+                    <a class="hero__body__buttons__btn" href="#!">
+                        <svg>
+                            <g fill="currentColor"><path d="M17.707 10.708L16.293 9.29398L13 12.587V2.00098H11V12.587L7.70697 9.29398L6.29297 10.708L12 16.415L17.707 10.708Z"></path><path d="M18 18.001V20.001H6V18.001H4V20.001C4 21.103 4.897 22.001 6 22.001H18C19.104 22.001 20 21.103 20 20.001V18.001H18Z"></path></g>
+                        </svg>
+                        Download CV
+                    </a>
+                    <a class="hero__body__buttons__btn hero__body__buttons__btn--dark" href="#!">Contact me directly</a>
+                </div>
+            </div>
+            <div class="hero__images">
+                <img class="hero__images__main-image" src="https://discord.com/assets/7b01f72a2054561145b6dd04add417c0.svg" alt="">
+                <img class="hero__images__main-image" src="https://discord.com/assets/e92fcc9ab6e63c1a17e954af347a1f1d.svg" alt="">
+            
+                <img class="hero__images__boat-1" src="https://discord.com/assets/94acf432b564660994742251c2a5f222.svg" alt="">
+                <img class="hero__images__boat-2" src="https://discord.com/assets/4bdac631250f5f9e8a4b928d5efa22c8.svg" alt="">
+                <img class="hero__images__boat-3" src="https://discord.com/assets/31fde13d3508b8ddb01cf817ad09c690.svg" alt="">
+            
+                <img class="hero__images__bg-1" src="https://discord.com/assets/edaebb01cd24df779f6feae9a34bd7d8.svg" alt="">
+
+                <img class="hero__images__balloon" src="https://discord.com/assets/9c0629769616f9629689a0e68a2e57b7.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <video src="https://discord.com/assets/9cb4bd901decf27f803a41801e39beb8.webm" loop autoplay></video>
+    </div>
+</body>
+<script>
+    const timeline = gsap.timeline({ defaults: { duration: 1 } })
+    
+    timeline
+        .from(".hero", {
+            height: 0
+        })
+        .from(".hero__images__bg-1", {
+            opacity: 0
+        })
+        .from(".hero__images__main-image", {
+            opacity: 0,
+            bottom: "-100%",
+            delay: 1
+        }, "-=2")
+
+    console.log(timeline)
+    // gsap.from(".hero", {
+    //     height: 0
+    // })
+    // gsap.from(".hero__body__title", {
+    //     opacity: 0,
+    //     duration: 1,
+    //     ease: "elastic"
+    // })
+
+</script>
+</html>
