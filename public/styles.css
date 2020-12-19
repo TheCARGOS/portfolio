@@ -6,6 +6,20 @@
     font-family: Whitney;
 }
 
+@font-face {
+    font-family: Whitney;
+    src: url("./assets/fonts/whitneymedium.otf")
+}
+
+@font-face {
+    font-family: WhitneyLight;
+    src: url("./assets/fonts/whitneylight.otf")
+}
+@font-face {
+    font-family: WhitneyBold;
+    src: url("./assets/fonts/whitneybold.otf")
+}
+
 :root {
     --brand: #7289da;
     --brand-gradient: linear-gradient(90deg,#8ea1e1,#7289da);
@@ -63,6 +77,7 @@
     margin: 0 20px;
     font-size: 16px;
     font-weight: bold;
+    font-family: WhitneyBold;
     cursor: pointer;
     z-index: 100;
 }
@@ -80,6 +95,7 @@
     text-decoration: none;
     font-size: 14px;
     font-weight: light;
+    font-family: WhitneyLight;
 }
 
 
@@ -103,6 +119,7 @@
     line-height: 32px;
     margin-top: 40px;
     font-weight: lighter;
+    font-family: WhitneyLight;
     z-index: 100;
     max-width: 78%;
 }
@@ -123,7 +140,8 @@
     border-radius: 28px;
     text-decoration: none;
     font-size: 20px;
-    font-weight: light;
+    font-weight: regular;
+    font-family: Whitney;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -284,6 +302,7 @@ img.row-item {
     line-height: 32px;
     color: black;
     font-weight: lighter;
+    font-family: WhitneyLight;
 }
 
 .skills {
