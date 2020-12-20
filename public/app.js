@@ -33,6 +33,13 @@ contactForm.addEventListener("submit", e => {
     }
 
     if ( fullname.value.length > 5 && subject.value.length > 5 && content.value.length > 10 ) {
+        messagesRef.add(contactData)
+            .then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+            })
         modalContent.classList.remove("modal-form__content--danger")
         modalMessage.innerHTML = "Message send successfully. We'll be in touch soon."
     } else {
@@ -47,21 +54,5 @@ contactForm.addEventListener("submit", e => {
             .from("#modalForm", {ease: "power.in", duration: 1.5, y: "100vh"}, "-=1")
             .to("#modalForm", { display: "none", opacity: 0, delay: 1 })
      )
-
-    console.log(contactData)
-//     messagesRef.add(contactData)
-//         .then(function(docRef) {
-//             console.log("Document written with ID: ", docRef.id);
-//         })
-//         .catch(function(error) {
-//             console.error("Error adding document: ", error);
-//         })
-// })
-// 
-//     .get()
-//     .then( function(querySnapshot) {
-//         querySnapshot.forEach(function(doc) {
-//             // doc.data() is never undefined for query doc snapshots
-//             console.log(doc.id, " => ", doc.data());
-//         });
-    })
+    
+})
