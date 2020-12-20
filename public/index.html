@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CARLOS' PORTFOLIO</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/modules.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
 </head>
 <body>
     <div class="hero">
@@ -94,10 +97,10 @@
                 <p class="row__text">Feel free to contact me any time, I will be happy to meet you.</p>
             
                 <div class="form-container">
-                    <form class="form" action="/contact" method="POST">
+                    <form class="form" id="contactForm" action="/contact" method="POST">
                         <fieldset class="fieldset">
                             <label class="form__label" for="name">FULLNAME</label>
-                            <input class="form__input" type="text" id="name" placeholder="ex: John Doe">
+                            <input class="form__input" type="text" id="fullname" placeholder="ex: John Doe">
                         </fieldset>
                         <fieldset class="fieldset">
                             <label class="form__label" for="name">SUBJECT</label>
@@ -110,6 +113,15 @@
                         <button class="hero__body__buttons__btn hero__body__buttons__btn--dark" type="submit">Send</button>
                     </form>
                     <img class="form-container__img" src="https://discord.com/assets/351330f6409e8046b0c996093e3e827b.svg" alt="">
+                </div>
+            </div>
+
+            <!-- The Modal -->
+            <div id="modalForm" class="modal-form">
+                <!-- Modal content -->
+                <div class="modal-form__content">
+                <button id="modalClose" class="modal-form__close">x</button>
+                <p id="modalMessage" class="modal-form__text"></p>
                 </div>
             </div>
         </div>
@@ -131,4 +143,5 @@
             delay: 1
         }, "-=2")
 </script>
+<script src="app.js"></script>
 </html>

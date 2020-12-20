@@ -8,16 +8,16 @@
 
 @font-face {
     font-family: Whitney;
-    src: url("./assets/fonts/whitneymedium.otf")
+    src: url("../assets/fonts/whitneymedium.otf")
 }
 
 @font-face {
     font-family: WhitneyLight;
-    src: url("./assets/fonts/whitneylight.otf")
+    src: url("../assets/fonts/whitneylight.otf")
 }
 @font-face {
     font-family: WhitneyBold;
-    src: url("./assets/fonts/whitneybold.otf")
+    src: url("../assets/fonts/whitneybold.otf")
 }
 
 :root {
