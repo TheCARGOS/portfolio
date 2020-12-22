@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CARLOS' PORTFOLIO</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/projects-view.css">
     <link rel="stylesheet" href="./css/modules.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
 </head>
-<body id="body">
+<body>
     <div class="hero">
         <div class="hero__container">
             <header class="hero__header">
                 <h1 class="hero__header__title">@TheCARGOS</h1>
                 <nav>
                     <ul class="hero__header__nav">
-                        <li class="hero__header__nav__li"><a href="#skills">Languages</a></li>
-                        <li class="hero__header__nav__li"><a href="#projects">Projects & Challenges</a></li>
-                        <li class="hero__header__nav__li"><a href="#contact">Contact</a></li>
+                        <li class="hero__header__nav__li">Languages</li>
+                        <li class="hero__header__nav__li">Experience</li>
+                        <li class="hero__header__nav__li">Challenges</li>
+                        <li class="hero__header__nav__li">Feedback</li>
+                        <li class="hero__header__nav__li">Contact</li>
                     </ul>
                 </nav>
                 <a class="hero__header__btn-lang" href="#!">Login</a>
@@ -58,7 +59,7 @@
 
     <section>
         <div class="container">
-            <div class="row" id="skills">
+            <div class="row">
                 <img class="row-item" src="https://discord.com/assets/c01c644bc9fa2a28678ae2f44969d248.svg" alt="">
                 <div class="row-item row-item--text">
                     <h2 class="row__title">Languages I learn so far...</h2>
@@ -78,11 +79,11 @@
     <svg class="wave-1hkxOo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none"><path class="wavePath-haxJK1" d="M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z" fill="var(--off-white)"></path></svg>
     <section style="background: var(--off-white); margin-top: -10px;">
         <div class="container">
-            <div class="row row--reverse" id="projects">
+            <div class="row row--reverse">
                 <div class="row-item row-item--text">
                     <h2 class="row__title">Projects & Challenges</h2>
                     <p class="row__text">2019 was the year I started coding for others, one year later I feel comfortable making design into code.</p>
-                    <a class="hero__body__buttons__btn hero__body__buttons__btn--dark" href="#!" onclick="goTo('projects')">Review Projects</a>
+                    <a class="hero__body__buttons__btn hero__body__buttons__btn--dark" href="#!">Review Projects</a>
                 </div>
                 <img class="row-item" src="https://discord.com/assets/98c9edf635a98377ec579aaa19ed47be.svg" alt="">
             </div>
@@ -91,7 +92,7 @@
     </section>
     <section>
         <div class="container">
-            <div class="column" id="contact">
+            <div class="column">
                 <h2 class="row__title">Contact me</h2>
                 <p class="row__text">Feel free to contact me any time, I will be happy to meet you.</p>
             
@@ -142,6 +143,5 @@
             delay: 1
         }, "-=2")
 </script>
-<script src="./app.js"></script>
-<script src="./views.js"></script>
+<script src="app.js"></script>
 </html>

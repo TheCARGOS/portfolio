@@ -12,7 +12,8 @@
   
   /* Modal Content/Box */
   .modal-form__content {
-        background-color: #fefefe;
+        background-color: var(--status-green);
+        color: var(--off-white);
         margin: 15% auto; /* 15% from the top and centered */
         padding: 20px;
         width: 80%; /* Could be more or less, depending on screen size */
@@ -47,9 +48,10 @@
     color: var(--off-white)
   }
   
-  .close:hover,
-  .close:focus {
-    color: black;
+  .modal-form__close:hover,
+  .modal-form__close:focus {
     text-decoration: none;
     cursor: pointer;
+    border: none;
+    outline: none;
   }

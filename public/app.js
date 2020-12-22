@@ -51,8 +51,7 @@ contactForm.addEventListener("submit", e => {
     modalForm.animate(
         tl
             .to("#modalForm", { display: "block", opacity: 1 })
-            .from("#modalForm", {ease: "power.in", duration: 1.5, y: "100vh"}, "-=1")
+            .from("#modalForm", {ease: "power.in", duration: 1, y: "100vh"}, "-=1")
             .to("#modalForm", { display: "none", opacity: 0, delay: 1 })
      )
-    
 })

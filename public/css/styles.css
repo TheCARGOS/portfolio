@@ -38,6 +38,8 @@
     --num-grid-columns: 4;
     --page-gutter: 24px;
     --section-spacing: 56px;
+
+    scroll-behavior: smooth;
 }
 
 .hero {
@@ -63,6 +65,7 @@
 
 .hero__header__title {
     font-size: 18px;
+    z-index: 100;
 }
 
 .hero__header__nav {
@@ -72,7 +75,7 @@
     align-items: center;
 }
 
-.hero__header__nav__li {
+.hero__header__nav__li, .hero__header__nav__li a {
     list-style-type: none;
     margin: 0 20px;
     font-size: 16px;
@@ -80,6 +83,8 @@
     font-family: WhitneyBold;
     cursor: pointer;
     z-index: 100;
+    color: var(--off-white);
+    text-decoration: none;
 }
 
 .hero__header__nav__li:hover {
@@ -96,6 +101,7 @@
     font-size: 14px;
     font-weight: light;
     font-family: WhitneyLight;
+    z-index: 100;
 }
 
 
