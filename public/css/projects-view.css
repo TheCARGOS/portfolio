@@ -1,11 +1,14 @@
 .hero--projects {
     height: 756px;
+    background: linear-gradient(90deg,#b473f5,#e292aa);
 }
 
 .hero--projects__body {
     text-align: left;
     align-items: flex-start;
-    /* padding-left: var(--section-spacing) */
+    /* padding-top: 0; */
+    padding-left: var(--section-spacing);
+    padding-top: 0;
 }
 
 .hero--projects__header__icon {
@@ -36,6 +39,34 @@
     /* transform-origin: center center; */
 }
 
+.hero__images__video-alt {
+    width: 250px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50px;
+}
+
 .text-center {
     text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+    .hero--projects__body {
+        padding-top: var(--section-spacing) !important;
+        padding-left: 0;
+        padding-top: 130px !important;
+    }
+
+    .hero--projects__body__title {
+        font-size: 52px;
+    }
+
+    .hero--projects__body__text {
+        font-size: 24px;
+    }
+
+    .hero--projects__body__text {
+        font-size: 24px;
+    }
 }
