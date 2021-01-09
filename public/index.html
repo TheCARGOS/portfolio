@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
 </head>
 <body id="body">
     <div class="hero">
@@ -24,7 +25,13 @@
                         <li class="hero__header__nav__li"><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
-                <a class="hero__header__btn-lang" href="#!">Login</a>
+                <div style="z-index: 400;">
+                    <a id="login-button" class="hero__header__btn-lang" href="#!" onclick="googleSignin()">Login</a>
+                    <div id="google-user" class="google-user hide-by-default">
+                        <img id="user-photo-2" class="google-user__photo" src="https://www.xovi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="">
+                        <h2 id="user-name-2" class="google-user__name"></h2>
+                    </div>
+                </div>
             </header>
 
             <header class="hero__header hero__header--mobile">
@@ -98,16 +105,38 @@
         <div class="container">
             <div class="column" id="contact">
                 <h2 class="row__title">Contact me</h2>
-                <p class="row__text">Feel free to contact me any time, I will be happy to meet you.</p>
+                <p class="row__text">Feel free to contact me via this form or just simply message me from whatsapp / gmail directly.</p>
             
                 <div class="row row--reverse" style="padding: 0;">
-                    <form class="form" id="contactForm" action="/contact" method="POST">
+                    <div class="google-container" id="google-auth">
+                        <span class="google-container__span">Sign in via google before you send me a message.</span>
+                        <div class="form__btn--google" onclick="googleSignin()">
+                            <img class="form__btn__img--google" src="https://img-authors.flaticon.com/google.jpg" alt="">
+                            <span class="form__btn__span">Google Signin</span>
+                        </div>
+                    </div>
+                    <form class="form hide-by-default" id="contactForm" action="/contact" method="POST">
                         <fieldset class="fieldset">
-                            <label class="form__label" for="name">FULLNAME</label>
-                            <input class="form__input" type="text" id="fullname" placeholder="ex: John Doe">
+                            <div class="profile">
+                                <img id="user-photo" class="profile__img" src="https://www.xovi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="">
+                                <h2 id="user-name" class="profile__name"></h2>
+                            </div>
+                            <!-- <button onclick="googleSignout()">Google Signout</button> -->
                         </fieldset>
+
+                        <!-- HIDDEN CONTENT -->
+                        <fieldset class="fieldset hide-by-default">
+                            <label class="form__label" for="name">NAME</label>
+                            <input class="form__input" type="text" id="fullname" placeholder="ex: Remote Frontend Job">
+                        </fieldset>
+                        <fieldset class="fieldset hide-by-default">
+                            <label class="form__label" for="email">EMAIL</label>
+                            <input class="form__input" type="text" id="email" placeholder="ex: Remote Frontend Job">
+                        </fieldset>
+                        <!-- END OF HIDDEN CONTENT -->
+
                         <fieldset class="fieldset">
-                            <label class="form__label" for="name">SUBJECT</label>
+                            <label class="form__label" for="subject">SUBJECT</label>
                             <input class="form__input" type="text" id="subject" placeholder="ex: Remote Frontend Job">
                         </fieldset>
                         <fieldset class="fieldset">
@@ -148,5 +177,7 @@
         }, "-=2")
 </script>
 <script src="./app.js"></script>
+<script src="./auth.js"></script>
+<script src="./contact.js"></script>
 <script src="./views.js"></script>
 </html>

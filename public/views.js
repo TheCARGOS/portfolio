@@ -10,7 +10,13 @@ const home = `
                 <li class="hero__header__nav__li"><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <a class="hero__header__btn-lang" href="#!">Login</a>
+        <div style="z-index: 400;">
+            <a id="login-button" class="hero__header__btn-lang" href="#!" onclick="googleSignin()">Login</a>
+            <div id="google-user" class="google-user hide-by-default">
+                <img id="user-photo-2" class="google-user__photo" src="https://www.xovi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="">
+                <h2 id="user-name-2" class="google-user__name"></h2>
+            </div>
+        </div>
     </header>
 
     <header class="hero__header hero__header--mobile">
@@ -81,40 +87,59 @@ const home = `
 <svg class="wave-1hkxOo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none"><path class="wavePath-haxJK1" d="M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z" fill="white"></path></svg>
 </section>
 <section>
-<div class="container">
-    <div class="column" id="contact">
-        <h2 class="row__title">Contact me</h2>
-        <p class="row__text">Feel free to contact me any time, I will be happy to meet you.</p>
-    
-        <div class="row row--reverse" style="padding: 0;">
-            <form class="form" id="contactForm" action="/contact" method="POST">
-                <fieldset class="fieldset">
-                    <label class="form__label" for="name">FULLNAME</label>
-                    <input class="form__input" type="text" id="fullname" placeholder="ex: John Doe">
-                </fieldset>
-                <fieldset class="fieldset">
-                    <label class="form__label" for="name">SUBJECT</label>
-                    <input class="form__input" type="text" id="subject" placeholder="ex: Remote Frontend Job">
-                </fieldset>
-                <fieldset class="fieldset">
-                    <label class="form__label" for="name">MESSAGE</label>
-                    <input class="form__input" type="text" id="content" placeholder="ex: whatever you wan to tell me...">
-                </fieldset>
-                <button class="hero__body__buttons__btn hero__body__buttons__btn--dark" type="submit">Send</button>
-            </form>
-            <img class="form-container__img" src="https://discord.com/assets/351330f6409e8046b0c996093e3e827b.svg" alt="">
+    <div class="container">
+        <div class="column" id="contact">
+            <h2 class="row__title">Contact me</h2>
+            <p class="row__text">Feel free to contact me via this form or just simply message me from whatsapp / gmail directly.</p>
+        
+            <div class="row row--reverse" style="padding: 0;">
+                <div class="google-container" id="google-auth">
+                    <span class="google-container__span">Sign in via google before you send me a message.</span>
+                    <div class="form__btn--google" onclick="googleSignin()">
+                        <img class="form__btn__img--google" src="https://img-authors.flaticon.com/google.jpg" alt="">
+                        <span class="form__btn__span">Google Signin</span>
+                    </div>
+                </div>
+                <form class="form hide-by-default" id="contactForm" action="/contact" method="POST">
+                    <fieldset class="fieldset">
+                        <div class="profile">
+                            <img id="user-photo" class="profile__img" src="https://www.xovi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="">
+                            <h2 id="user-name" class="profile__name"></h2>
+                        </div>
+                        <!-- <button onclick="googleSignout()">Google Signout</button> -->
+                    </fieldset>
+                    <!-- HIDDEN CONTENT -->
+                    <fieldset class="fieldset hide-by-default">
+                        <label class="form__label" for="name">NAME</label>
+                        <input class="form__input" type="text" id="fullname" placeholder="ex: Remote Frontend Job">
+                    </fieldset>
+                    <fieldset class="fieldset hide-by-default">
+                        <label class="form__label" for="email">EMAIL</label>
+                        <input class="form__input" type="text" id="email" placeholder="ex: Remote Frontend Job">
+                    </fieldset>
+                    <!-- END OF HIDDEN CONTENT -->
+                    <fieldset class="fieldset">
+                        <label class="form__label" for="subject">SUBJECT</label>
+                        <input class="form__input" type="text" id="subject" placeholder="ex: Remote Frontend Job">
+                    </fieldset>
+                    <fieldset class="fieldset">
+                        <label class="form__label" for="name">MESSAGE</label>
+                        <input class="form__input" type="text" id="content" placeholder="ex: whatever you wan to tell me...">
+                    </fieldset>
+                    <button class="hero__body__buttons__btn hero__body__buttons__btn--dark" type="submit">Send</button>
+                </form>
+                <img class="form-container__img" src="https://discord.com/assets/351330f6409e8046b0c996093e3e827b.svg" alt="">
+            </div>
+        </div>
+        <!-- The Modal -->
+        <div id="modalForm" class="modal-form">
+            <!-- Modal content -->
+            <div class="modal-form__content">
+            <button id="modalClose" class="modal-form__close">x</button>
+            <p id="modalMessage" class="modal-form__text"></p>
+            </div>
         </div>
     </div>
-
-    <!-- The Modal -->
-    <div id="modalForm" class="modal-form">
-        <!-- Modal content -->
-        <div class="modal-form__content">
-        <button id="modalClose" class="modal-form__close">x</button>
-        <p id="modalMessage" class="modal-form__text"></p>
-        </div>
-    </div>
-</div>
 </section>
 `
 
@@ -123,7 +148,6 @@ const projects = `
     <div class="hero__container hero--projects__container">
         <header class="hero__header">
             <svg onclick="goTo('home')" class="hero--projects__header__icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"></path></svg>
-            <a class="hero__header__btn-lang" href="#!">Login</a>
         </header>
     
         <div class="hero__body hero--projects__body">
@@ -165,7 +189,7 @@ const projects = `
                     <img class="skills__logo" src="https://cdn.iconscout.com/icon/free/png-256/javascript-20-555998.png" alt="">
                     <img class="skills__logo" src="https://www.codester.com/static/uploads/items/12158/icon.png" alt="">
                 </div>
-                <div class="hero__body__buttons">
+                <div class="hero__body__buttons hero--projects__body__buttons">
                     <a class="hero__body__buttons__btn hero__body__buttons__btn--dark" href="#!">View Code</a>
                     <a class="hero__body__buttons__btn hero__body__buttons__btn--dark" href="#!">Visit Project</a>
                 </div>
@@ -186,7 +210,7 @@ const projects = `
                     <img class="skills__logo" src="https://findicons.com/files/icons/2773/pictonic_free/128/prog_nodejs01.png" alt="">
                     <img class="skills__logo" src="https://findicons.com/files/icons/2773/pictonic_free/256/dbs_mongodb.png" alt="">
                 </div>
-                <div class="hero__body__buttons">
+                <div class="hero__body__buttons hero--projects__body__buttons">
                     <a class="hero__body__buttons__btn hero__body__buttons__btn--dark" href="#!">View Code</a>
                     <a class="hero__body__buttons__btn hero__body__buttons__btn--dark" href="#!">Visit Project</a>
                 </div>
@@ -216,34 +240,6 @@ const projects = `
             </div>
         </div>
     </div>
-    </section>
-    
-    <section>
-    <div class="container">
-        <div class="column">
-            <h2 class="row__title">Contact me</h2>
-            <p class="row__text">Feel free to contact me any time, I will be happy to meet you.</p>
-        
-            <div class="form-container">
-                <form class="form" id="contactForm" action="/contact" method="POST">
-                    <fieldset class="fieldset">
-                        <label class="form__label" for="name">FULLNAME</label>
-                        <input class="form__input" type="text" id="fullname" placeholder="ex: John Doe">
-                    </fieldset>
-                    <fieldset class="fieldset">
-                        <label class="form__label" for="name">SUBJECT</label>
-                        <input class="form__input" type="text" id="subject" placeholder="ex: Remote Frontend Job">
-                    </fieldset>
-                    <fieldset class="fieldset">
-                        <label class="form__label" for="name">MESSAGE</label>
-                        <input class="form__input" type="text" id="content" placeholder="ex: whatever you wan to tell me...">
-                    </fieldset>
-                    <button class="hero__body__buttons__btn hero__body__buttons__btn--dark" type="submit">Send</button>
-                </form>
-                <img class="form-container__img" src="https://discord.com/assets/351330f6409e8046b0c996093e3e827b.svg" alt="">
-            </div>
-        </div>
-    </div>
 </section>
 `
 
@@ -260,4 +256,4 @@ function goTo (route) {
     }
 }
 
-body.innerHTML = projects
+// body.innerHTML = projects

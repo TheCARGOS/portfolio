@@ -55,3 +55,8 @@
     border: none;
     outline: none;
   }
+
+
+  .hide-by-default {
+    display: none;
+  }
