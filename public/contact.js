@@ -21,15 +21,6 @@ contactForm.addEventListener("submit", e => {
     }
 
     if ( subject.value.length > 5 && content.value.length > 10 ) {
-        // messagesRef.add(contactData)
-        //     .then(function(docRef) {
-        //         console.log("Document written with ID: ", docRef.id);
-        //     })
-        //     .catch(function(error) {
-        //         console.error("Error adding document: ", error);
-        //     })
-        // modalContent.classList.remove("modal-form__content--danger")
-        // modalMessage.innerHTML = "Message send successfully. We'll be in touch soon."
         const emailValue = email.value
         messagesRef.doc(emailValue).set({
             name: fullname.value,

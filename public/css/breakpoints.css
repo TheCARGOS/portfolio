@@ -4,8 +4,18 @@
         min-height: unset;
     }
 
+    .hero--projects {
+        height: 754px;
+    }
+
     .hero--projects__container {
         padding-bottom: 200px;
+    }
+
+    .hero--projects__body {
+        padding-left: 0;
+        margin-left: 40px;
+        margin-top: 80px;
     }
 
     .hero__header {
@@ -46,6 +56,16 @@
 
     .form-container {
         grid-template-columns: 50% 1fr;
+    }
+
+    .footer__row {
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: auto;
+        padding-bottom: 100px;
+    }
+
+    .footer__column:first-child {
+        grid-column: unset;
     }
 }
 
