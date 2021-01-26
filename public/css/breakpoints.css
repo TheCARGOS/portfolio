@@ -54,6 +54,10 @@
         padding: 250px 0;
     }
 
+    .row-item a {
+        width: 75%;
+    }
+
     .form-container {
         grid-template-columns: 50% 1fr;
     }
